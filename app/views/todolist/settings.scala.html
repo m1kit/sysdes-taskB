@@ -1,0 +1,33 @@
+@()
+
+<section id="sec-settings" class="section is-hidden">
+    <div class="container">
+        <h1 class="title">Settings</h1>
+
+        <div class="field">
+            <label class="label">New Password</label>
+            <div class="control has-icons-left has-icons-right">
+                <input id="settings-password" class="input" type="password" placeholder="passw0rd">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </div>
+            <div id="settings-errors" class="cleanup"></div>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-link" onclick="updatePassword()">Update password</button>
+            </div>
+            <div class="control">
+                <button class="button is-danger" onclick="signout()">Sign out</button>
+            </div>
+            <div class="control">
+                <button class="button is-danger" onclick="deleteAccount()">Delete account</button>
+            </div>
+            <div class="control">
+                <button class="button is-link is-light" onclick="moveTo('tasks')">Cancel</button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+@*
+ * インデックスページ
+ * - controllers.HomeController.index から呼び出される
+ * - 引数としてメッセージを受け取り，画面に表示する
+ *@
+
+@* 引数としてメッセージを受け取る *@
+@()
+
+@main("Home") {
+    <section id="sec-js" class="section">
+        <div class="notification is-danger">
+            Javascript runtime is required for this application
+        </div>
+    </section>
+    @todolist.tasks()
+    @todolist.task()
+    @todolist.newtask()
+    @todolist.signup()
+    @todolist.signin()
+    @todolist.settings()
+}

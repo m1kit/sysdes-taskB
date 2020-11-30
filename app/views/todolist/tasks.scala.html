@@ -1,0 +1,47 @@
+@()
+
+<section id="sec-tasks" class="section is-hidden">
+    <div class="container">
+        <h1 class="title">Tasks</h1>
+
+        <div class="box">
+            <h2 class="subtitle">Search</h2>
+            <div class="columns">
+                <div class="column is-2 field">
+                    <label class="label">State</label>
+                    <div class="control select is-multiple">
+                        <select id="tasks-query-state" multiple size="4">
+                            <option value="created" selected>Created</option>
+                            <option value="ongoing" selected>Ongoing</option>
+                            <option value="completed" selected>Completed</option>
+                            <option value="deleted" selected>Deleted</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="column is-2">
+                    <label class="label">Tag</label>
+                    <div class="field">
+                        <div class="control">
+                            <input id="tasks-query-tag" class="input" type="text" placeholder="emergency">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-2">
+                    <label class="label">Page</label>
+                    <div class="field">
+                        <div class="control">
+                            <input id="tasks-query-page" class="input" type="number" value="0" min="0" step="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="control">
+                <a class="button is-primary" onclick="searchTasks()">Search</a>
+            </div>
+        </div>
+
+        <div id="tasks-container" class="container">
+        </div>
+
+    </div>
+</section>

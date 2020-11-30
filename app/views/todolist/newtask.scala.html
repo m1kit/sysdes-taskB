@@ -1,0 +1,41 @@
+@()
+
+<section id="sec-newtask" class="section is-hidden">
+    <div class="container">
+        <h1 class="title">Create a new Task</h1>
+        <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+                <input id="newtask-title" class="input" type="text" placeholder="Ask my friend">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+                <textarea id="newtask-description" class="textarea" placeholder="Abount my homework"></textarea>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">State</label>
+            <div class="control">
+                <div class="select">
+                    <select id="newtask-state">
+                        <option value="created" selected>Created</option>
+                        <option value="ongoing">Ongoing</option>
+                            <!--option value="completed">Completed</option-->
+                            <!--option value="deleted">Deleted</option-->
+                    </select>
+                </div>
+            </div>
+            <div id="newtask-errors" class="cleanup"></div>
+        </div>
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-link" onclick="createTask()">Submit</button>
+            </div>
+            <div class="control">
+                <button class="button is-link is-light" onclick="moveTo('tasks')">Cancel</button>
+            </div>
+        </div>
+    </div>
+</section>

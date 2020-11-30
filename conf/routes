@@ -1,0 +1,38 @@
+# TodoList
+## Frontend
+GET           /                                   controllers.MainController.index()
+
+## API
+### User
+POST          /api/users                          controllers.api.UserController.register()
+POST          /api/credential                     controllers.api.UserController.login()
+PUT           /api/users/me                       controllers.api.UserController.update()
+DELETE        /api/users/me                       controllers.api.UserController.withdraw()
+GET           /api/users/me                       controllers.api.UserController.me()
+
+### Task
+GET           /api/tasks                          controllers.api.TaskController.list()
+POST          /api/tasks                          controllers.api.TaskController.create()
+GET           /api/tasks/:task                    controllers.api.TaskController.detail(task: Int)
+#PUT           /api/tasks/:task                    controllers.api.TaskController.list
+POST          /api/tasks/:task/users              controllers.api.TaskController.addUser(task: Int)
+DELETE        /api/tasks/:task/users/:user        controllers.api.TaskController.removeUser(task: Int, user: String)
+POST          /api/tasks/:task/tags               controllers.api.TaskController.addTag(task: Int)
+DELETE        /api/tasks/:task/tags/:tag          controllers.api.TaskController.removeTag(task: Int, tag: String)
+
+# Formapp
+## Normal
+GET           /formapp/messages                   controllers.formapp.FormappController.list
+GET           /formapp/messages/:id               controllers.formapp.FormappController.entry(id: Int)
+GET           /formapp/register                   controllers.formapp.FormappController.startRegistration
+POST          /formapp/register/name              controllers.formapp.FormappController.registerName
+POST          /formapp/register/gender            controllers.formapp.FormappController.registerGender
+POST          /formapp/register/message           controllers.formapp.FormappController.registerMessage
+POST          /formapp/register/confirm           controllers.formapp.FormappController.confirm
+GET           /formapp                            controllers.Default.redirect(to = "/formapp/messages")
+
+
+# Resources
+GET           /robot.txt                          controllers.Default.notFound
+GET           /favicon.ico                        controllers.Assets.at(path="/public/images", file="favicon.png")
+GET           /assets/*file                       controllers.Assets.versioned(path="/public", file: Asset)
